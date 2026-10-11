@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="Diya Malik (2019) ™️">
+  <title>Diya Malik (2019) ™️</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+      -webkit-tap-highlight-color:transparent;
+    }
+
+    html,body{
+      width:100%;
+      min-height:100%;
+      background:#05080b;
+    }
+
+    body{
+      font-family:Inter,sans-serif;
+      color:#f5f8fa;
+      overflow-x:hidden;
+    }
+
+    body::before{
+      content:"";
+      position:fixed;
+      width:280px;
+      height:280px;
+      top:-120px;
+      left:-100px;
+      background:rgba(0,196,255,.13);
+      filter:blur(85px);
+      border-radius:50%;
+      pointer-events:none;
+    }
+
+    body::after{
+      content:"";
+      position:fixed;
+      width:260px;
+      height:260px;
+      bottom:-130px;
+      right:-100px;
+      background:rgba(20,110,255,.12);
+      filter:blur(90px);
+      border-radius:50%;
+      pointer-events:none;
+    }
+
+    .page{
+      width:100%;
+      max-width:480px;
+      min-height:100vh;
+      margin:auto;
+      padding:16px 15px 18px;
+      position:relative;
+      display:flex;
+      flex-direction:column;
+    }
+
+    /* TOP STATUS */
+
+    .status{
+      height:32px;
+      border:1px solid rgba(125,205,255,.15);
+      background:rgba(255,255,255,.035);
+      border-radius:100px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      font-size:9px;
+      font-weight:700;
+      letter-spacing:1.4px;
+      color:#aebdc6;
+      text-transform:uppercase;
+      backdrop-filter:blur(14px);
+      margin-bottom:17px;
+    }
+
+    .live-dot{
+      width:6px;
+      height:6px;
+      background:#37e69a;
+      border-radius:50%;
+      box-shadow:0 0 0 4px rgba(55,230,154,.08),0 0 13px #37e69a;
+      animation:pulse 1.5s infinite;
+    }
+
+    @keyframes pulse{
+      0%,100%{opacity:1;transform:scale(1)}
+      50%{opacity:.45;transform:scale(.75)}
+    }
+
+    /* BRAND */
+
+    .brand{
+      text-align:center;
+      position:relative;
+    }
+
+    .logo-wrap{
+      width:88px;
+      height:88px;
+      margin:0 auto 12px;
+      padding:3px;
+      border-radius:25px;
+      background:linear-gradient(145deg,#51d9ff,#1265ff 55%,#071c35);
+      box-shadow:
+        0 0 0 1px rgba(92,214,255,.2),
+        0 10px 38px rgba(0,145,255,.2);
+    }
+
+    .logo{
+      width:100%;
+      height:100%;
+      display:block;
+      object-fit:cover;
+      border-radius:22px;
+      background:#080d12;
+    }
+
+    .brand h1{
+      font-family:Orbitron,sans-serif;
+      font-size:25px;
+      line-height:1.15;
+      font-weight:800;
+      letter-spacing:1px;
+      background:linear-gradient(90deg,#ffffff,#82dfff,#ffffff);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      text-transform:uppercase;
+    }
+
+    .brand p{
+      margin-top:7px;
+      color:#84949e;
+      font-size:10px;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      font-weight:600;
+    }
+
+    /* LIVE TICKER */
+
+    .ticker{
+      margin-top:18px;
+      height:34px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:10px;
+      background:rgba(255,255,255,.025);
+      display:flex;
+      align-items:center;
+      position:relative;
+    }
+
+    .ticker-label{
+      height:100%;
+      display:flex;
+      align-items:center;
+      padding:0 10px;
+      background:rgba(0,174,255,.10);
+      border-right:1px solid rgba(0,174,255,.12);
+      color:#58d9ff;
+      font-size:8px;
+      font-weight:800;
+      letter-spacing:1.2px;
+      z-index:2;
+    }
+
+    .ticker-track{
+      white-space:nowrap;
+      animation:move 15s linear infinite;
+      font-size:9px;
+      color:#9aa9b2;
+      padding-left:15px;
+    }
+
+    .ticker-track span{
+      color:#46e59b;
+      font-weight:700;
+      margin-right:18px;
+    }
+
+    @keyframes move{
+      from{transform:translateX(5%)}
+      to{transform:translateX(-65%)}
+    }
+
+    /* HERO */
+
+    .hero{
+      margin-top:16px;
+      padding:20px 17px 17px;
+      border-radius:20px;
+      border:1px solid rgba(105,208,255,.13);
+      background:
+        linear-gradient(145deg,rgba(19,36,48,.72),rgba(5,11,16,.84));
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.045),
+        0 15px 45px rgba(0,0,0,.22);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      width:180px;
+      height:180px;
+      right:-80px;
+      top:-90px;
+      background:rgba(0,181,255,.12);
+      filter:blur(35px);
+      border-radius:50%;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      font-size:8px;
+      font-weight:800;
+      letter-spacing:1.5px;
+      color:#52d8ff;
+      text-transform:uppercase;
+      margin-bottom:9px;
+    }
+
+    .eyebrow::before{
+      content:"";
+      width:18px;
+      height:1px;
+      background:#52d8ff;
+      box-shadow:0 0 8px #52d8ff;
+    }
+
+    .hero h2{
+      font-size:22px;
+      line-height:1.18;
+      letter-spacing:-.5px;
+      font-weight:800;
+      max-width:330px;
+    }
+
+    .hero h2 strong{
+      color:#58d8ff;
+    }
+
+    .hero-text{
+      margin-top:9px;
+      color:#8e9ca5;
+      font-size:11px;
+      line-height:1.55;
+      max-width:390px;
+    }
+
+    /* MARKET CARDS */
+
+    .stats{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:9px;
+      margin-top:11px;
+    }
+
+    .stat{
+      padding:12px 12px 11px;
+      border-radius:13px;
+      border:1px solid rgba(255,255,255,.07);
+      background:rgba(255,255,255,.028);
+    }
+
+    .stat-top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      color:#667781;
+      font-size:8px;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      font-weight:700;
+    }
+
+    .signal{
+      width:5px;
+      height:5px;
+      border-radius:50%;
+      background:#41df98;
+      box-shadow:0 0 9px #41df98;
+    }
+
+    .stat-value{
+      margin-top:6px;
+      font-family:Orbitron,sans-serif;
+      font-size:16px;
+      font-weight:700;
+      color:#edfaff;
+    }
+
+    .up{
+      color:#41df98;
+      font-size:8px;
+      margin-left:3px;
+    }
+
+    /* FEATURES */
+
+    .features{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:7px;
+      margin-top:11px;
+    }
+
+    .feature{
+      text-align:center;
+      padding:11px 5px;
+      border-radius:12px;
+      background:rgba(255,255,255,.025);
+      border:1px solid rgba(255,255,255,.055);
+    }
+
+    .feature-icon{
+      font-size:15px;
+      margin-bottom:5px;
+      display:block;
+    }
+
+    .feature b{
+      display:block;
+      font-size:8px;
+      color:#cbd5da;
+      line-height:1.25;
+    }
+
+    .feature small{
+      display:block;
+      color:#687780;
+      font-size:7px;
+      margin-top:3px;
+    }
+
+    /* CTA */
+
+    .cta-area{
+      margin-top:13px;
+    }
+
+    .cta{
+      width:100%;
+      min-height:54px;
+      border:0;
+      border-radius:15px;
+      background:linear-gradient(105deg,#16aee9,#176cff);
+      color:#fff;
+      font-family:Inter,sans-serif;
+      font-size:13px;
+      font-weight:800;
+      letter-spacing:.2px;
+      cursor:pointer;
+      box-shadow:
+        0 9px 28px rgba(20,128,255,.28),
+        inset 0 1px 0 rgba(255,255,255,.22);
+      transition:transform .15s ease,box-shadow .15s ease;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .cta::after{
+      content:"";
+      position:absolute;
+      top:0;
+      left:-90px;
+      width:55px;
+      height:100%;
+      background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);
+      transform:skewX(-20deg);
+      animation:shine 3.2s infinite;
+    }
+
+    @keyframes shine{
+      0%,55%{left:-90px}
+      75%,100%{left:110%}
+    }
+
+    .cta:active{
+      transform:scale(.98);
+      box-shadow:0 5px 18px rgba(20,128,255,.25);
+    }
+
+    .cta-main{
+      display:block;
+      font-size:13px;
+    }
+
+    .cta-sub{
+      display:block;
+      margin-top:3px;
+      font-size:8px;
+      opacity:.76;
+      font-weight:600;
+      letter-spacing:.5px;
+    }
+
+    .note{
+      text-align:center;
+      margin-top:8px;
+      color:#5f6d75;
+      font-size:7.5px;
+      line-height:1.4;
+    }
+
+    /* FOOTER */
+
+    .footer{
+      text-align:center;
+      margin-top:auto;
+      padding-top:13px;
+      color:#48545b;
+      font-size:7px;
+      letter-spacing:.7px;
+      text-transform:uppercase;
+    }
+
+    /* SMALL MOBILE DEVICES */
+
+    @media(max-height:700px){
+      .page{
+        padding-top:11px;
+      }
+
+      .status{margin-bottom:10px}
+      .logo-wrap{width:72px;height:72px;margin-bottom:8px}
+      .brand h1{font-size:21px}
+      .ticker{margin-top:11px}
+      .hero{margin-top:10px;padding:15px}
+      .hero h2{font-size:19px}
+      .hero-text{font-size:10px;margin-top:6px}
+      .stat{padding:9px}
+      .features{margin-top:8px}
+      .cta-area{margin-top:9px}
+    }
+  </style>
+  <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1632460611604397');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1632460611604397&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+</head>
+
+<body>
+
+  <main class="page">
+
+    <div class="status">
+      <span class="live-dot"></span>
+      LIVE CRICKET MARKET • ACTIVE ANALYSIS
+    </div>
+
+    <section class="brand">
+      <div class="logo-wrap">
+        <img src="https://raw.githubusercontent.com/online512/diya/9e26a4f9e5d01c90b5a152b873b97723c9eeebe7/photo_2026-10-09_23-47-58.jpg" alt="Diya Malik (2019) " class="logo">
+      </div>
+
+      <h1>Diya Malik (2019) ™️</h1>
+      <p>Cricket Trading &amp; Match Analysis</p>
+    </section>
+
+    <div class="ticker">
+      <div class="ticker-label">LIVE</div>
+      <div class="ticker-track">
+        MARKET WATCH &nbsp; • &nbsp;
+        <span>● ANALYSIS ACTIVE</span>
+        MATCH INSIGHTS &nbsp; • &nbsp;
+        <span>● LIVE MONITORING</span>
+        CRICKET MARKET &nbsp; • &nbsp;
+        <span>● UPDATED</span>
+      </div>
+    </div>
+
+    <section class="hero">
+
+      <div class="eyebrow">Professional CRICKET Desk</div>
+
+      <h2>
+        Trade Smarter With
+        <strong>Better Match Insights.</strong>
+      </h2>
+
+      <p class="hero-text">
+        Follow focused Crciket analysis, match insights and market-based updates — all in one dedicated community.
+      </p>
+
+      <div class="stats">
+
+        <div class="stat">
+          <div class="stat-top">
+            Market Watch
+            <span class="signal"></span>
+          </div>
+          <div class="stat-value">
+            ACTIVE <span class="up">● LIVE</span>
+          </div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-top">
+            Match Desk
+            <span class="signal"></span>
+          </div>
+          <div class="stat-value">
+            READY <span class="up">● ON</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="features">
+
+        <div class="feature">
+          <span class="feature-icon">⚽</span>
+          <b>Match Analysis</b>
+          <small>Focused insights</small>
+        </div>
+
+        <div class="feature">
+          <span class="feature-icon">📊</span>
+          <b>Market Updates</b>
+          <small>Regular tracking</small>
+        </div>
+
+        <div class="feature">
+          <span class="feature-icon">⚡</span>
+          <b>Quick Insights</b>
+          <small>Stay updated</small>
+        </div>
+
+      </div>
+
+      <div class="cta-area">
+
+        <button
+          class="cta"
+          type="button"
+          onclick="window.location.href='https://t.me/+1gsWdKbGIXYyMDJl';"
+        >
+          <span class="cta-main">JOIN DIYA MALIK</span>
+          <span class="cta-sub">GET ACCESS TO THE CRICKET COMMUNITY →</span>
+        </button>
+
+        <div class="note">
+          Cricket analysis &amp; market information for informational purposes only.
+        </div>
+
+      </div>
+
+    </section>
+
+    <footer class="footer">
+       • Cricket Trading Community
+    </footer>
+
+  </main>
+
+</body>
+</html>
